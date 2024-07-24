@@ -1,0 +1,31 @@
+---
+- name: Solaris get zoneadm local zone
+  hosts: all
+  gather_facts: no
+  become: true
+  become_method: sudo
+
+  # Gather Fatc
+  pre_tasks:
+
+  - name: "Gather fact"
+    setup:
+      filter:
+      - 'ansible_os_family'
+
+  tasks:
+
+  # check OS Type
+  - name: "Check OS Type"
+    fail:
+      msg: The system is not Solaris
+    when: ( ansible_os_family != "Solaris" )
+
+  # try zoneadm module
+  - name: Gather facts configured local zone
+    zoneadm_facts:
+
+  # print all lz name at running STATE
+  - name: Print all LZ at running STATE
+    debug:
+      msg: "{{ ansible_facts.zone_list  | selectattr('STATUS','equalto', 'running' ) | map(attribute='NAME') }}" 
