@@ -17,6 +17,7 @@
 #### Repo files:
 
 ```
+├── /docs                 ##<-- GiHub Page only
 ├── /library                
 │   └── zoneadm_facts.py  ##<-- python custom module
 └── zoneadm_list.yml      ##<-- ansible playbook example
