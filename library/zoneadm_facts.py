@@ -14,7 +14,7 @@ description:
     - This module currently supports SunOS Family, Oracle Solaris 10/11.
 requirements:
   - zoneadm
-short_description: Gather facts Gathers facts about configured local zone
+short_description: Gathers facts about configured local zone
 notes:
   - |
     This module shows the list of zones in the running, installed and configured state.
