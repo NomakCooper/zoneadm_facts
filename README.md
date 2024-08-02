@@ -3,6 +3,7 @@
 ![Ansible Custom Module][ansible-shield]
 ![Oracle Solaris][solaris-shield]
 ![python][python-shield]
+![license][license-shield]
 
 </div>
 
@@ -139,5 +140,6 @@ $ cp path/to/module library
 [ansible-shield]: https://img.shields.io/badge/Ansible-custom%20module-blue?style=for-the-badge&logo=ansible&logoColor=lightgrey
 [solaris-shield]: https://img.shields.io/badge/oracle-solaris-red?style=for-the-badge&logo=oracle&logoColor=red
 [python-shield]: https://img.shields.io/badge/python-blue?style=for-the-badge&logo=python&logoColor=yellow
+[license-shield]: https://img.shields.io/github/license/nomakcooper/zoneadm_facts?style=for-the-badge&label=LICENSE
 
 [zoneadm]: https://docs.oracle.com/en/operating-systems/solaris/oracle-solaris/11.4/use-zones/using-zoneadm-command.html
