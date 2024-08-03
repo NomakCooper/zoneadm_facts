@@ -1,3 +1,8 @@
+<meta name="author" content="Marco Noce">
+<meta name="description" content="Gathers facts about configured local zone on a SunOS/Oracle Solaris global zone by zoneadm">
+<meta name="copyright" content="Marco Noce 2024">
+<meta name="keywords" content="ansible, module, fact, solaris, zoneadm, zone">
+
 <div align="center">
 
 ![Ansible Custom Module][ansible-shield]
