@@ -34,8 +34,7 @@ EXAMPLES = r'''
 
 - name: Print all LZ at running STATE
   debug:
-    msg: "{{ ansible_facts.zone_list  | selectattr('STATUS','equalto', 'running' ) | map(attribute='NAME') }}"  
-
+    msg: "{{ ansible_facts.zone_list  | selectattr('STATUS','equalto', 'running' ) | map(attribute='NAME') }}"
 '''
 
 RETURN = r'''
@@ -81,11 +80,9 @@ ansible_facts:
           sample: "shared"                                        
 '''
 
-import re
 import platform
 from ansible.module_utils.common.text.converters import to_native
 from ansible.module_utils.basic import AnsibleModule
-
 
 def zone_parse(raw):
 
@@ -122,9 +119,8 @@ def zone_parse(raw):
         results.append(result)
     return results
 
-
 def main():
-    command_args = ['list', '-i','-c','-v']
+    command_args = ['list', '-i', '-c', '-v']
     commands_map = {
         'zoneadm': {
             'args': [],
@@ -133,7 +129,7 @@ def main():
     }
     module = AnsibleModule(
         argument_spec=dict(
-            #no arguments necessary
+            # no arguments necessary
         ),
         supports_check_mode=True,
     )
@@ -161,7 +157,6 @@ def main():
 
         if bin_path is None:
             raise EnvironmentError(msg='Unable to find any of the supported commands in PATH: {0}'.format(", ".join(sorted(commands_map))))
-
         
         args = commands_map[command]['args']
         rc, stdout, stderr = module.run_command([bin_path] + args)
@@ -175,7 +170,6 @@ def main():
         module.fail_json(msg=to_native(e))
 
     module.exit_json(**result)
-
 
 if __name__ == '__main__':
     main()
