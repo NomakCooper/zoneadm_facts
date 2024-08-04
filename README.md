@@ -109,6 +109,10 @@ ok: [global_zone_host] => {
 |BRAND     |string                |The local zone brand. native, solaris10 and more.                                 |always  |"native"          |
 |IP        |string                |The local zone IP or shared.                                                      |always  |"shared"          |
 
+## SANITY TEST
+
+* Ansible sanity test is available in [SANITY.md] file
+
 ## Integration
 
 1. Assuming you are in the root folder of your ansible project.
@@ -148,3 +152,4 @@ $ cp path/to/module library
 [license-shield]: https://img.shields.io/github/license/nomakcooper/zoneadm_facts?style=for-the-badge&label=LICENSE
 
 [zoneadm]: https://docs.oracle.com/en/operating-systems/solaris/oracle-solaris/11.4/use-zones/using-zoneadm-command.html
+[SANITY.md]: SANITY.md
