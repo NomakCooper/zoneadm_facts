@@ -77,12 +77,13 @@ ansible_facts:
           description: The local zone IP or shared.
           returned: always
           type: str
-          sample: "shared"                                        
+          sample: "shared"
 '''
 
 import platform
 from ansible.module_utils.common.text.converters import to_native
 from ansible.module_utils.basic import AnsibleModule
+
 
 def zone_parse(raw):
 
@@ -118,6 +119,7 @@ def zone_parse(raw):
         }
         results.append(result)
     return results
+
 
 def main():
     command_args = ['list', '-i', '-c', '-v']
@@ -157,7 +159,7 @@ def main():
 
         if bin_path is None:
             raise EnvironmentError(msg='Unable to find any of the supported commands in PATH: {0}'.format(", ".join(sorted(commands_map))))
-        
+
         args = commands_map[command]['args']
         rc, stdout, stderr = module.run_command([bin_path] + args)
         if rc == 0:
@@ -169,6 +171,7 @@ def main():
     except (KeyError, EnvironmentError) as e:
         module.fail_json(msg=to_native(e))
 
+    
     module.exit_json(**result)
 
 if __name__ == '__main__':
