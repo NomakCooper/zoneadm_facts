@@ -171,8 +171,8 @@ def main():
     except (KeyError, EnvironmentError) as e:
         module.fail_json(msg=to_native(e))
 
-    
     module.exit_json(**result)
+
 
 if __name__ == '__main__':
     main()
